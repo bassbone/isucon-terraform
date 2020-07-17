@@ -100,7 +100,7 @@ apt-get remove docker.io
     ansible-playbook -i local webapp.yml
 )
 (
-    cd /home/isucon/webapp/public
+    cd /home/isucon/isucari/webapp/public
     wget -q https://github.com/isucon/isucon9-qualify/releases/download/v2/initial.zip
     unzip -q initial.zip
     rm -rf upload
