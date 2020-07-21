@@ -16,12 +16,12 @@ resource "google_compute_firewall" "ssh" {
     target_tags = ["${var.name}-bench", "${var.name}-web"]
 }
 
-resource "google_compute_firewall" "http" {
-    name = "${var.name}-http"
+resource "google_compute_firewall" "https" {
+    name = "${var.name}-https"
     network = google_compute_network.default.name
     allow {
         protocol = "tcp"
-        ports = ["80"]
+        ports = ["443"]
     }
 
     source_ranges = ["0.0.0.0/0"]
@@ -61,6 +61,20 @@ apt-get remove docker.io
     echo "[bench]\nlocalhost ansible_connection=local" > local
     echo "[defaults]\nremote_tmp = /root/.ansible/tmp" > ansible.cfg
     ansible-playbook -i local bench.yml
+)
+(
+    cd /home/isucon/isucari/webapp/public
+    wget -q https://github.com/isucon/isucon9-qualify/releases/download/v2/initial.zip
+    unzip -q initial.zip
+    rm -rf upload
+    mv v3_initial_data upload
+)
+(
+    cd isucon9-qualify/initial-data
+    wget -q https://github.com/isucon/isucon9-qualify/releases/download/v2/bench1.zip
+    unzip -q bench1.zip
+    rm -rf images
+    mv v3_bench1 images
 )
 SCRIPT
 }
@@ -107,7 +121,7 @@ apt-get remove docker.io
     mv v3_initial_data upload
 )
 (
-    cd initial-data
+    cd isucon9-qualify/initial-data
     wget -q https://github.com/isucon/isucon9-qualify/releases/download/v2/bench1.zip
     unzip -q bench1.zip
     rm -rf images
