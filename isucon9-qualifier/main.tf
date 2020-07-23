@@ -70,7 +70,7 @@ apt-get remove docker.io
     mv v3_initial_data upload
 )
 (
-    cd isucon9-qualify/initial-data
+    cd /home/isucon/isucari/initial-data
     wget -q https://github.com/isucon/isucon9-qualify/releases/download/v2/bench1.zip
     unzip -q bench1.zip
     rm -rf images
@@ -121,7 +121,7 @@ apt-get remove docker.io
     mv v3_initial_data upload
 )
 (
-    cd isucon9-qualify/initial-data
+    cd /home/isucon/isucari/initial-data
     wget -q https://github.com/isucon/isucon9-qualify/releases/download/v2/bench1.zip
     unzip -q bench1.zip
     rm -rf images
