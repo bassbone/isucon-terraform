@@ -9,6 +9,8 @@ git clone https://github.com/bassbone/isucon9-qualify-certs.git
     cd isucon9-qualify-certs
     cp -p *.pem /isucon9-qualify/provisioning/certs/isucon9.catatsuy.org/
 )
+echo "${bench-ip} shipment.isucon9.catatsuy.org" >> /etc/hosts
+echo "${bench-ip} payment.isucon9.catatsuy.org" >> /etc/hosts
 # make initial-data
 apt-get -y install docker.io
 (
@@ -33,3 +35,6 @@ apt-get -y remove docker.io
     mv v3_initial_data upload
     chown -R isucon:isucon upload
 )
+echo "startup finish!"
+#shutdown -r 1
+

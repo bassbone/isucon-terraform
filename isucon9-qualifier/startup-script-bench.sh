@@ -11,7 +11,6 @@ git clone https://github.com/bassbone/isucon9-qualify-certs.git
     echo "isucon.crt" >> /etc/ca-certificates.conf
     update-ca-certificates
 )
-echo "${web-ip} isucon9.catatsuy.org" >> /etc/hosts
 # make initial-data
 apt-get -y install docker.io
 (
@@ -44,3 +43,6 @@ apt-get -y remove docker.io
     mv v3_bench1 images
     chown -R isucon:isucon images
 )
+echo "startup finish!"
+#shutdown -r 1
+

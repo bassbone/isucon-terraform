@@ -12,19 +12,21 @@ variable "zone" {
 variable "bench_machine_type" {
     description = "gcloud compute machine-types list"
     #default = "f1-micro"
-    default = "g1-small"
+    #default = "g1-small"
     #default = "n1-standard-1"
     #default = "n1-highcpu-2"
     #default = "n1-highcpu-4"
+    default = "custom-2-4096"
 }
 
 variable "web_machine_type" {
     description = "gcloud compute machine-types list"
     #default = "f1-micro"
-    default = "g1-small"
+    #default = "g1-small"
     #default = "n1-standard-1"
     #default = "n1-highcpu-2"
     #default = "n1-highcpu-4"
+    default = "custom-2-4096"
 }
 
 variable "disk_image" {

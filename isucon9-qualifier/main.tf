@@ -68,7 +68,8 @@ resource "google_compute_instance" "bench" {
         network = google_compute_network.default.name
         access_config { }
     }
-    metadata_startup_script = templatefile("startup-script-bench.sh", { web-ip = "${google_compute_instance.web.network_interface.0.access_config.0.nat_ip}" })
+    allow_stopping_for_update = true
+    metadata_startup_script = file("startup-script-bench.sh")
 }
 
 resource "google_compute_instance" "web" {
@@ -87,5 +88,6 @@ resource "google_compute_instance" "web" {
         network = google_compute_network.default.name
         access_config { }
     }
-    metadata_startup_script = file("startup-script-web.sh")
+    allow_stopping_for_update = true
+    metadata_startup_script = templatefile("startup-script-web.sh", { bench-ip = "${google_compute_instance.bench.network_interface.0.access_config.0.nat_ip}" })
 }
