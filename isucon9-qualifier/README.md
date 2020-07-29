@@ -1,4 +1,4 @@
-# isucon-terraform
+# isucon9-qualifier
 
 ## command
 
