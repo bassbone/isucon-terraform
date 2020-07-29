@@ -1,4 +1,8 @@
 #!/bin/sh
+FILE=/initialized.txt
+if [ -e ${FILE} ]; then
+    exit 0
+fi
 apt-get update
 apt-get -y install ansible git language-pack-ja build-essential unzip
 update-locale LANG=ja_JP.UTF-8
@@ -31,6 +35,7 @@ apt-get -y remove docker.io
     cd /home/isucon/isucari/webapp/public
     wget -q https://github.com/isucon/isucon9-qualify/releases/download/v2/initial.zip
     unzip -q initial.zip
+    rm initial.zip
     rm -rf upload
     mv v3_initial_data upload
     chown -R isucon:isucon upload
@@ -39,10 +44,12 @@ apt-get -y remove docker.io
     cd /home/isucon/isucari/initial-data
     wget -q https://github.com/isucon/isucon9-qualify/releases/download/v2/bench1.zip
     unzip -q bench1.zip
+    rm bench1.zip
     rm -rf images
     mv v3_bench1 images
     chown -R isucon:isucon images
 )
 echo "startup finish!"
-#shutdown -r 1
+touch ${FILE}
+reboot
 
