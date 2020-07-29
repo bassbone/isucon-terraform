@@ -8,9 +8,9 @@ apt-get -y install ansible git language-pack-ja build-essential unzip
 update-locale LANG=ja_JP.UTF-8
 git clone https://github.com/isucon/isucon9-qualify.git
 # update certs
-git clone https://github.com/bassbone/isucon9-qualify-certs.git
+git clone https://github.com/bassbone/isucon9-qualify-extension.git
 (
-    cd isucon9-qualify-certs
+    cd isucon9-qualify-extension/certs
     cp -p isucon.crt /usr/share/ca-certificates/
     echo "isucon.crt" >> /etc/ca-certificates.conf
     update-ca-certificates

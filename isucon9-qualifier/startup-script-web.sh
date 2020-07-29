@@ -8,9 +8,9 @@ apt-get -y install ansible git language-pack-ja build-essential unzip
 update-locale LANG=ja_JP.UTF-8
 git clone https://github.com/isucon/isucon9-qualify.git
 # update certs
-git clone https://github.com/bassbone/isucon9-qualify-certs.git
+git clone https://github.com/bassbone/isucon9-qualify-extension.git
 (
-    cd isucon9-qualify-certs
+    cd isucon9-qualify-extension/certs
     cp -p *.pem /isucon9-qualify/provisioning/certs/isucon9.catatsuy.org/
 )
 echo "${bench-ip} shipment.isucon9.catatsuy.org" >> /etc/hosts
