@@ -21,23 +21,12 @@ resource "google_compute_firewall" "https" {
     target_tags = ["${var.name}-web"]
 }
 
-resource "google_compute_firewall" "shipment" {
-    name = "${var.name}-shipment"
+resource "google_compute_firewall" "external" {
+    name = "${var.name}-external"
     network = google_compute_network.default.name
     allow {
         protocol = "tcp"
-        ports = ["7000"]
-    }
-    source_ranges = ["0.0.0.0/0"]
-    target_tags = ["${var.name}-bench"]
-}
-
-resource "google_compute_firewall" "payment" {
-    name = "${var.name}-payment"
-    network = google_compute_network.default.name
-    allow {
-        protocol = "tcp"
-        ports = ["5555"]
+        ports = ["5555", "7000"]
     }
     source_ranges = ["0.0.0.0/0"]
     target_tags = ["${var.name}-bench"]
