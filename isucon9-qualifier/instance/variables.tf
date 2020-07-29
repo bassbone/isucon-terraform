@@ -6,6 +6,12 @@ variable "metadata_startup_script" {}
 
 variable "network_name" {}
 
+variable "subnetwork_name" {}
+
+variable "static_ip" {}
+
+variable "offset" {}
+
 variable "machine_type" {
     description = "gcloud compute machine-types list"
     #default = "g1-small"
@@ -30,3 +36,6 @@ variable "zone" {
     #default = "asia-east1-c"
 }
 
+variable "node_count" {
+    default = "1"
+}
