@@ -1,4 +1,4 @@
-# isucon9-qualifier
+# isucon9-qualify
 
 ## command
 
