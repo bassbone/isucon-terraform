@@ -10,8 +10,7 @@
 
 ```
 # IP_BENCH=xx.xx.xx.xx
-# echo "${IP_BENCH} shipment.isucon9.catatsuy.org" >> /etc/hosts
-# echo "${IP_BENCH} payment.isucon9.catatsuy.org" >> /etc/hosts
+# echo "${IP_BENCH} external.isucon9.catatsuy.org" >> /etc/hosts
 # cat /etc/hosts
 ```
 
@@ -22,5 +21,5 @@ $ gcloud compute ssh "isucon9-qualifier-web-2" --zone "asia-northeast1-a" --comm
 ```
 
 ```
-$ bin/benchmarker -target-url=https://isucon9.catatsuy.org -payment-url=http://payment.isucon9.catatsuy.org:5555 -shipment-url=http://shipment.isucon9.catatsuy.org:7000
+$ bin/benchmarker -target-url=https://isucon9.catatsuy.org -payment-url=http://external.isucon9.catatsuy.org:5555 -shipment-url=http://external.isucon9.catatsuy.org:7000
 ```
