@@ -5,12 +5,14 @@
 ```
 # IP_WEB=xx.xx.xx.xx
 # echo "${IP_WEB} isucon9.catatsuy.org" >> /etc/hosts
+# cat /etc/hosts
 ```
 
 ```
 # IP_BENCH=xx.xx.xx.xx
 # echo "${IP_BENCH} shipment.isucon9.catatsuy.org" >> /etc/hosts
 # echo "${IP_BENCH} payment.isucon9.catatsuy.org" >> /etc/hosts
+# cat /etc/hosts
 ```
 
 ```
