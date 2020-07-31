@@ -2,7 +2,9 @@ variable "name" {}
 
 variable "tags" {}
 
-variable "metadata_startup_script" {}
+variable "metadata_startup_script" {
+    default = ""
+}
 
 variable "network_name" {}
 

@@ -30,16 +30,6 @@ apt-get -y remove docker.io
     echo "[defaults]\nremote_tmp = /root/.ansible/tmp" > ansible.cfg
     ansible-playbook -i local bench.yml
 )
-# update image
-(
-    cd /home/isucon/isucari/webapp/public
-    wget -q https://github.com/isucon/isucon9-qualify/releases/download/v2/initial.zip
-    unzip -q initial.zip
-    rm initial.zip
-    rm -rf upload
-    mv v3_initial_data upload
-    chown -R isucon:isucon upload
-)
 (
     cd /home/isucon/isucari/initial-data
     wget -q https://github.com/isucon/isucon9-qualify/releases/download/v2/bench1.zip

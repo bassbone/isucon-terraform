@@ -1,6 +1,6 @@
 #!/bin/sh
 FILE=/initialized.txt
-if [ -e $${FILE} ]; then
+if [ -e ${FILE} ]; then
     exit 0
 fi
 apt-get update
@@ -13,8 +13,6 @@ git clone https://github.com/bassbone/isucon9-qualify-extension.git
     cd isucon9-qualify-extension/certs
     cp -p *.pem /isucon9-qualify/provisioning/certs/isucon9.catatsuy.org/
 )
-echo "${bench-ip} shipment.isucon9.catatsuy.org" >> /etc/hosts
-echo "${bench-ip} payment.isucon9.catatsuy.org" >> /etc/hosts
 # make initial-data
 apt-get -y install docker.io
 (
@@ -30,6 +28,10 @@ apt-get -y remove docker.io
     sed -i -e 's/- webapp.perl/#- webapp.perl/g' webapp.yml
     sed -i -e 's/- php/#- php/g' webapp.yml
     sed -i -e 's/- webapp.php/#- webapp.php/g' webapp.yml
+    sed -i -e 's/- nodejs/#- nodejs/g' webapp.yml
+    sed -i -e 's/- webapp.nodejs/#- webapp.nodejs/g' webapp.yml
+    sed -i -e 's/- python/#- python/g' webapp.yml
+    sed -i -e 's/- webapp.python/#- webapp.python/g' webapp.yml
     echo "[webapp]\nlocalhost ansible_connection=local" > local
     echo "[defaults]\nremote_tmp = /root/.ansible/tmp" > ansible.cfg
     ansible-playbook -i local webapp.yml
@@ -47,6 +49,6 @@ apt-get -y remove docker.io
 systemctl disable isucari.golang.service
 systemctl enable isucari.ruby.service
 echo "startup finish!"
-touch $${FILE}
+touch ${FILE}
 reboot
 
