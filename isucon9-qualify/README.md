@@ -2,14 +2,14 @@
 
 ## command
 
-for web server
+for bench server
 
 ```
 # IP=xx.xx.xx.xx
 # echo "${IP} isucon9.catatsuy.org" >> /etc/hosts && cat /etc/hosts
 ```
 
-for bench server
+for web server
 
 ```
 # IP=xx.xx.xx.xx
