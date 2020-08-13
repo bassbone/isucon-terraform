@@ -9,7 +9,7 @@ module "gce_bench" {
     static_ip = google_compute_address.static_ip_bench
     offset = 201
     #disk_image = "isucon9-qualifier-bench"
-    #machine_type = "custom-1-2048"
+    machine_type = "custom-2-4096"
 }
 
 module "gce_web" {
@@ -23,6 +23,6 @@ module "gce_web" {
     static_ip = google_compute_address.static_ip_web
     offset = 101
     #disk_image = "isucon9-qualifier-web"
-    #machine_type = "custom-1-2048"
+    machine_type = "custom-2-4096"
 }
 
