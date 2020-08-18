@@ -43,3 +43,14 @@ resource "google_compute_firewall" "netdata" {
     target_tags = ["${var.name}-web"]
 }
 
+resource "google_compute_firewall" "iperf" {
+    name = "${var.name}-iperf"
+    network = google_compute_network.default.name
+    allow {
+        protocol = "tcp"
+        ports = ["5001"]
+    }
+    source_ranges = ["0.0.0.0/0"]
+    target_tags = ["${var.name}-bench", "${var.name}-web"]
+}
+

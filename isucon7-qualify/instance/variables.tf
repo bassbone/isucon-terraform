@@ -14,6 +14,8 @@ variable "static_ip" {}
 
 variable "offset" {}
 
+variable "ip_prefix" {}
+
 variable "machine_type" {
     description = "gcloud compute machine-types list"
     #default = "g1-small"

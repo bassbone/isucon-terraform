@@ -14,7 +14,7 @@ resource "google_compute_instance" "default" {
     network_interface {
         network = var.network_name
         subnetwork = var.subnetwork_name
-        network_ip = "10.0.0.${count.index + var.offset}"
+        network_ip = "${var.ip_prefix}.${count.index + var.offset}"
         access_config {
             nat_ip = var.static_ip[count.index].address
         }
