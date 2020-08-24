@@ -12,7 +12,8 @@ variable "web-count" {
 }
 
 variable "bench-region" {
-    default = "us-central1"
+    #default = "us-central1"
+    default = "asia-northeast1"
 }
 
 variable "web-region" {

@@ -11,7 +11,7 @@ module "gce_bench" {
     offset = 201
     disk_image = "isucon7-qualifier-bench"
     machine_type = "custom-2-2048"
-    zone = "us-central1-a"
+    #zone = "us-central1-a"
 }
 
 module "gce_web" {
@@ -26,6 +26,6 @@ module "gce_web" {
     ip_prefix = "10.0.2"
     offset = 101
     disk_image = "isucon7-qualifier-web"
-    machine_type = "custom-2-2048"
+    machine_type = "custom-1-1024"
 }
 
