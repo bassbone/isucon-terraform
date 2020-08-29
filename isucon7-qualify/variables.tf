@@ -7,17 +7,25 @@ variable "bench-count" {
 }
 
 variable "web-count" {
-    #default = 1
-    default = 3
+    default = 1
+    #default = 3
 }
 
 variable "bench-region" {
-    #default = "us-central1"
+    description = "gcloud compute regions list"
     default = "asia-northeast1"
 }
 
 variable "web-region" {
     description = "gcloud compute regions list"
     default = "asia-northeast1"
+}
+
+variable "bench-ip-prefix" {
+    default = "10.0.2"
+}
+
+variable "web-ip-prefix" {
+    default = "10.0.1"
 }
 

@@ -18,15 +18,14 @@ variable "ip_prefix" {}
 
 variable "machine_type" {
     description = "gcloud compute machine-types list"
-    #default = "g1-small"
-    #default = "n1-standard-1"
     #default = "custom-2-4096"
     default = "custom-2-2048"
 }
 
 variable "disk_image" {
     description = "gcloud compute images list"
-    default = "ubuntu-1804-bionic-v20200701"
+    #default = "ubuntu-1804-bionic-v20200701"
+    default = "ubuntu-2004-focal-v20200810"
 }
 
 variable "disk_size" {
@@ -36,10 +35,13 @@ variable "disk_size" {
 variable "zone" {
     description = "gcloud compute zones list"
     default = "asia-northeast1-a"
-    #default = "asia-east1-b"
-    #default = "asia-east1-c"
 }
 
 variable "node_count" {
     default = "1"
 }
+
+variable "preemptible" {
+    default = true
+}
+

@@ -21,7 +21,7 @@ resource "google_compute_instance" "default" {
     }
     allow_stopping_for_update = true
     scheduling {
-        preemptible = true
+        preemptible = var.preemptible
         automatic_restart = false
     }
     metadata_startup_script = var.metadata_startup_script
