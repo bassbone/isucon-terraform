@@ -7,8 +7,7 @@ variable "bench-count" {
 }
 
 variable "web-count" {
-    default = 1
-    #default = 3
+    default = 3
 }
 
 variable "bench-region" {

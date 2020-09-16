@@ -31,6 +31,18 @@ resource "google_compute_firewall" "https" {
     source_ranges = ["0.0.0.0/0"]
     target_tags = ["${var.name}-web"]
 }
+
+resource "google_compute_firewall" "external" {
+    name = "${var.name}-external"
+    network = google_compute_network.default.name
+    allow {
+        protocol = "tcp"
+        ports = ["5555", "7000"]
+    }
+    source_ranges = ["0.0.0.0/0"]
+    target_tags = ["${var.name}-bench"]
+}
+
 resource "google_compute_firewall" "internal" {
     name = "${var.name}-internal"
     network = google_compute_network.default.name
